@@ -70,9 +70,9 @@ function ParticleField() {
             </bufferGeometry>
             <pointsMaterial
                 size={0.08}
-                color="#00FF94" // Neon
+                color="#2E5CFF" // Electric Blue
                 transparent
-                opacity={0.6}
+                opacity={0.4}
                 sizeAttenuation
             />
         </points>
@@ -87,7 +87,7 @@ export function BackgroundParticles() {
                 gl={{ antialias: true, alpha: true }}
             >
                 <ParticleField />
-                <fog attach="fog" args={['#050505', 10, 30]} />
+                <fog attach="fog" args={['#ffffff', 10, 30]} />
             </Canvas>
             {/* Gradient overlay to fade bottom */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-canvas pointer-events-none" />

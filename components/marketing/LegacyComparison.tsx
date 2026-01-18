@@ -74,11 +74,11 @@ export function LegacyComparison() {
         <section id="legacy" className="py-24 px-6 md:px-12 bg-canvas overflow-hidden">
             <div className="max-w-7xl mx-auto space-y-12">
                 <div className="text-center space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500">
-                        Resurrect Your Legacy
+                    <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-zinc-900 to-zinc-500">
+                        Future-Proof Your Factory
                     </h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto">
-                        Don't let legacy code be a liability. Logic Vibe ingests your 20-year-old projects and refactors them into modern, documented, and optimized logic.
+                    <p className="text-zinc-500 max-w-2xl mx-auto">
+                        Ingest decades of legacy code and instantly refactor it into clean, documented, modern logic. Turn your 'black box' systems into transparent, optimized assets.
                     </p>
                 </div>
 
@@ -86,30 +86,30 @@ export function LegacyComparison() {
                     ref={containerRef}
                     onMouseMove={handleMouseMove}
                     onTouchMove={handleTouchMove}
-                    className="relative w-full aspect-video md:aspect-[21/9] rounded-xl overflow-hidden cursor-col-resize border border-white/10 group shadow-2xl"
+                    className="relative w-full aspect-video md:aspect-[21/9] rounded-xl overflow-hidden cursor-col-resize border border-zinc-200 group shadow-2xl"
                 >
                     {/* Background Layer (Before) */}
-                    <div className="absolute inset-0 bg-[#f0e6d2] flex items-center justify-center select-none filter blur-[1px] grayscale-[0.5] hover:grayscale-0 transition-all duration-500">
+                    <div className="absolute inset-0 bg-[#f0e6d2] flex items-center justify-center select-none filter blur-[1px] grayscale-[0.2] hover:grayscale-0 transition-all duration-500">
                         {OLD_CODE_SVG}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8">
-                            <span className="text-black font-mono font-bold bg-white/80 px-4 py-2 rounded shadow-lg uppercase tracking-widest text-sm">Legacy (1998)</span>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent flex items-end p-8">
+                            <span className="text-black font-mono font-bold bg-white/90 px-4 py-2 rounded shadow-lg uppercase tracking-widest text-sm">Legacy (1998)</span>
                         </div>
                     </div>
 
                     {/* Foreground Layer (After) - Clip Path */}
                     <div
-                        className="absolute inset-0 bg-[#1e1e1e] select-none"
+                        className="absolute inset-0 bg-[#ffffff] select-none"
                         style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
                     >
-                        <div className="absolute inset-0 p-8 md:p-12 font-mono text-sm md:text-base text-gray-300 overflow-hidden leading-relaxed">
+                        <div className="absolute inset-0 p-8 md:p-12 font-mono text-sm md:text-base text-zinc-800 overflow-hidden leading-relaxed">
                             <div className="h-full w-full flex flex-col justify-center">
                                 <pre>
-                                    <code dangerouslySetInnerHTML={{ __html: NEW_CODE.replace(/FUNCTION_BLOCK/g, '<span class="text-neon">FUNCTION_BLOCK</span>').replace(/VAR_INPUT/g, '<span class="text-electric">VAR_INPUT</span>').replace(/END_VAR/g, '<span class="text-electric">END_VAR</span>').replace(/BOOL/g, '<span class="text-signal">BOOL</span>').replace(/\/\/.*/g, '<span class="text-zinc-500">$&</span>') }} />
+                                    <code dangerouslySetInnerHTML={{ __html: NEW_CODE.replace(/FUNCTION_BLOCK/g, '<span class="text-electric font-bold">FUNCTION_BLOCK</span>').replace(/VAR_INPUT/g, '<span class="text-electric font-bold">VAR_INPUT</span>').replace(/END_VAR/g, '<span class="text-electric font-bold">END_VAR</span>').replace(/BOOL/g, '<span class="text-signal font-bold">BOOL</span>').replace(/\/\/.*/g, '<span class="text-zinc-400 italic">$&</span>').replace(/TRUE/g, '<span class="text-neon-dark font-bold">TRUE</span>').replace(/FALSE/g, '<span class="text-neon-dark font-bold">FALSE</span>') }} />
                                 </pre>
                             </div>
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-end p-8">
-                            <span className="text-neon font-mono font-bold bg-black/80 border border-neon/20 px-4 py-2 rounded shadow-lg uppercase tracking-widest text-sm flex items-center gap-2">
+                        <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent flex items-end justify-end p-8">
+                            <span className="text-neon-dark font-mono font-bold bg-white border border-zinc-200 px-4 py-2 rounded shadow-lg uppercase tracking-widest text-sm flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
                                 Logic Vibe Optimized
                             </span>
@@ -118,10 +118,10 @@ export function LegacyComparison() {
 
                     {/* Slider Handle */}
                     <div
-                        className="absolute top-0 bottom-0 w-1 bg-neon shadow-[0_0_20px_rgba(0,255,148,0.5)] z-20 pointer-events-none"
+                        className="absolute top-0 bottom-0 w-1 bg-[#2E5CFF] shadow-[0_0_20px_rgba(46,92,255,0.5)] z-20 pointer-events-none"
                         style={{ left: `${sliderPosition}%` }}
                     >
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-black border border-neon rounded-full flex items-center justify-center text-neon shadow-[0_0_15px_rgba(0,255,148,0.5)]">
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-black border border-[#2E5CFF] rounded-full flex items-center justify-center text-[#2E5CFF] shadow-[0_0_15px_rgba(46,92,255,0.5)]">
                             <GripVertical size={16} />
                         </div>
                         {/* Spark particles effect placeholder */}

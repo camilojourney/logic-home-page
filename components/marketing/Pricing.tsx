@@ -14,7 +14,7 @@ const SUBSCRIPTIONS = [
         highlight: false,
     },
     {
-        name: "Control",
+        name: "Integrator",
         price: "$39",
         period: "/mo",
         description: "For freelance integrators.",
@@ -22,7 +22,7 @@ const SUBSCRIPTIONS = [
         highlight: true,
     },
     {
-        name: "Factory",
+        name: "Enterprise",
         price: "Custom",
         description: "For OEMs and manufacturing plants.",
         features: ["Unlimited Legacy Migration", "Private AI Model Training", "IEC 61499 Distributed Mgmt", "SSO & Audit Logs", "24/7 Priority Support"],
@@ -40,22 +40,22 @@ export function Pricing() {
 
             <div className="max-w-7xl mx-auto space-y-16 relative z-10">
                 <div className="text-center space-y-6">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white">
+                    <h2 className="text-4xl md:text-5xl font-bold text-zinc-900">
                         Return on Investment
                     </h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
+                    <p className="text-zinc-500 max-w-2xl mx-auto text-lg">
                         One hour of downtime costs $1.3 million. Logic Vibe costs less than a utility bill.
                     </p>
 
                     {/* Toggle */}
                     <div className="flex items-center justify-center gap-4 pt-4">
-                        <span className={cn("text-sm font-medium transition-colors", !isAnnual ? "text-white" : "text-zinc-500")}>Monthly</span>
+                        <span className={cn("text-sm font-medium transition-colors", !isAnnual ? "text-zinc-900" : "text-zinc-400")}>Monthly</span>
                         <button
                             onClick={() => setIsAnnual(!isAnnual)}
-                            className="w-16 h-8 bg-white/10 rounded-full relative px-1 cursor-pointer"
+                            className="w-16 h-8 bg-zinc-200 rounded-full relative px-1 cursor-pointer"
                         >
                             <motion.div
-                                className="w-6 h-6 bg-neon rounded-full"
+                                className="w-6 h-6 bg-white shadow-md rounded-full"
                                 layout
                                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                 style={{
@@ -63,7 +63,7 @@ export function Pricing() {
                                 }}
                             />
                         </button>
-                        <span className={cn("text-sm font-medium transition-colors", isAnnual ? "text-white" : "text-zinc-500")}>Yearly <span className="text-neon text-xs ml-1 font-normal">(-20%)</span></span>
+                        <span className={cn("text-sm font-medium transition-colors", isAnnual ? "text-zinc-900" : "text-zinc-400")}>Yearly <span className="text-neon-dark text-xs ml-1 font-bold">(-20%)</span></span>
                     </div>
                 </div>
 
@@ -74,42 +74,43 @@ export function Pricing() {
                             className={cn(
                                 "relative p-8 rounded-2xl border flex flex-col gap-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2",
                                 plan.highlight
-                                    ? "bg-white/[0.05] border-neon/50 shadow-[0_0_30px_rgba(0,255,148,0.1)] group"
-                                    : "bg-white/[0.02] border-white/10 hover:border-white/20"
+                                    ? "bg-white border-[#2E5CFF] shadow-2xl shadow-[#2E5CFF]/10 group"
+                                    : "bg-white border-zinc-200 hover:border-zinc-300 hover:shadow-xl"
                             )}
                         >
                             {plan.highlight && (
-                                <div className="absolute inset-0 rounded-2xl border border-neon/50 animate-pulse opacity-50 pointer-events-none" />
+                                <div className="absolute inset-0 rounded-2xl border border-[#2E5CFF]/50 animate-pulse opacity-50 pointer-events-none" />
                             )}
 
                             <div className="space-y-2">
-                                <h3 className={cn("text-xl font-bold", plan.highlight ? "text-neon" : "text-white")}>{plan.name}</h3>
+                                <h3 className={cn("text-xl font-bold", plan.highlight ? "text-[#2E5CFF]" : "text-zinc-900")}>{plan.name}</h3>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                                    <span className={cn("text-4xl font-bold", plan.highlight ? "text-zinc-900" : "text-zinc-900")}>{plan.price}</span>
                                     {plan.period && <span className="text-zinc-500">{plan.period}</span>}
                                 </div>
-                                <p className="text-sm text-zinc-400">{plan.description}</p>
+                                <p className="text-sm text-zinc-500">{plan.description}</p>
                             </div>
 
                             <div className="flex flex-col gap-3 flex-1">
                                 {plan.features.map((feat) => (
-                                    <div key={feat} className="flex items-start gap-3 text-sm text-zinc-300">
-                                        <Check className="w-4 h-4 text-neon shrink-0 mt-0.5" />
+                                    <div key={feat} className="flex items-start gap-3 text-sm text-zinc-600">
+                                        <Check className="w-4 h-4 text-[#2E5CFF] shrink-0 mt-0.5" />
                                         <span>{feat}</span>
                                     </div>
                                 ))}
                             </div>
 
-                            <button
+                            <a
+                                href="/"
                                 className={cn(
-                                    "w-full py-3 rounded-lg font-medium transition-colors",
+                                    "w-full py-3 rounded-lg font-medium transition-colors text-center block",
                                     plan.highlight
-                                        ? "bg-neon text-black hover:bg-neon/90"
-                                        : "bg-white/10 text-white hover:bg-white/20"
+                                        ? "bg-[#2E5CFF] text-white hover:bg-[#2E5CFF]/90 shadow-lg shadow-[#2E5CFF]/20"
+                                        : "bg-zinc-100 text-zinc-900 hover:bg-zinc-200"
                                 )}
                             >
                                 {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
-                            </button>
+                            </a>
                         </div>
                     ))}
                 </div>

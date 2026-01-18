@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #050505;
-  --color-surface: #121212;
-  --color-neon: #00FF94;
+  --color-canvas: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-neon: #2E5CFF;
+  /* Electric Blue */
+  --color-neon-light: #5C7FFF;
+  --color-neon-dark: #1A3ECC;
   --color-signal: #FF5E00;
   --color-electric: #2E5CFF;
-  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(0, 0, 0, 0.08);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -16,7 +19,7 @@
 
 /* Custom Utilities */
 @utility glass-panel {
-  @apply relative overflow-hidden bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-2xl;
+  @apply relative overflow-hidden bg-white/60 backdrop-blur-xl border border-black/5 shadow-xl;
 }
 
 @utility text-balance {
@@ -35,5 +38,5 @@
 }
 
 body {
-  @apply bg-canvas text-zinc-400 font-sans selection:bg-neon/30 selection:text-neon;
+  @apply bg-canvas text-zinc-900 font-sans selection:bg-[#2E5CFF] selection:text-white;
 }

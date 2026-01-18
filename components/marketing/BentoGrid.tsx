@@ -30,13 +30,13 @@ function RoboticArm() {
             >
                 {/* Arm Segment 2 */}
                 <motion.div
-                    className="absolute top-0 w-3 h-20 bg-neon/80 rounded-full origin-bottom"
+                    className="absolute top-0 w-3 h-20 bg-[#2E5CFF]/80 rounded-full origin-bottom"
                     style={{ bottom: "100%", left: "50%", x: "-50%" }}
                     animate={{ rotate: [0, -40, 20, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
                 >
                     {/* End Effector */}
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-6 h-6 border-2 border-neon rounded-full shadow-[0_0_10px_#00FF94]" />
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-6 h-6 border-2 border-[#2E5CFF] rounded-full shadow-[0_0_10px_#2E5CFF]" />
                 </motion.div>
             </motion.div>
         </div>
@@ -47,41 +47,41 @@ export function BentoGrid() {
     return (
         <section id="features" className="py-24 px-6 md:px-12 bg-canvas">
             <div className="max-w-7xl mx-auto mb-16 space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-white">
+                <h2 className="text-4xl md:text-5xl font-bold text-zinc-900">
                     Why Now?
                 </h2>
-                <p className="text-zinc-400 max-w-xl text-lg">
+                <p className="text-zinc-500 max-w-xl text-lg">
                     The industrial world is changing. Logic Vibe bridges the gap between the retiring workforce and the future of autonomous manufacturing.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto h-auto md:h-[500px]">
                 {/* Cell 1: The Problem (Graph) */}
-                <div className="md:col-span-2 relative p-6 glass-panel rounded-2xl group hover:scale-[1.01] transition-transform duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50" />
+                <div className="md:col-span-2 relative p-6 glass-panel rounded-2xl group hover:shadow-2xl transition-all duration-300 border border-zinc-200 bg-white">
+                    <div className="absolute inset-0 bg-gradient-to-br from-zinc-50 to-transparent opacity-50" />
                     <div className="relative z-10 h-full flex flex-col">
                         <div className="mb-4">
-                            <h3 className="text-xl font-bold text-white">The Silver Tsunami</h3>
-                            <p className="text-sm text-zinc-400">Expertise Gap vs. System Complexity</p>
+                            <h3 className="text-xl font-bold text-zinc-900">The Silver Tsunami</h3>
+                            <p className="text-sm text-zinc-500">Expertise Gap vs. System Complexity</p>
                         </div>
                         <div className="flex-1 min-h-[250px] w-full">
                             <ResponsiveContainer width="100%" height="100%">
                                 <AreaChart data={CHART_DATA}>
                                     <defs>
                                         <linearGradient id="colorExperts" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3} />
+                                            <stop offset="5%" stopColor="#ef4444" stopOpacity={0.2} />
                                             <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
                                         </linearGradient>
                                         <linearGradient id="colorComplexity" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#00FF94" stopOpacity={0.3} />
-                                            <stop offset="95%" stopColor="#00FF94" stopOpacity={0} />
+                                            <stop offset="5%" stopColor="#2E5CFF" stopOpacity={0.2} />
+                                            <stop offset="95%" stopColor="#2E5CFF" stopOpacity={0} />
                                         </linearGradient>
                                     </defs>
-                                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                                    <XAxis dataKey="year" fontSize={12} stroke="#52525b" tickLine={false} axisLine={false} />
+                                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.05)" vertical={false} />
+                                    <XAxis dataKey="year" fontSize={12} stroke="#71717a" tickLine={false} axisLine={false} />
                                     <Tooltip
-                                        contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', color: '#fff' }}
-                                        itemStyle={{ color: '#fff' }}
+                                        contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e4e4e7', color: '#18181b', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                                        itemStyle={{ color: '#18181b' }}
                                     />
                                     <Area
                                         type="monotone"
@@ -95,7 +95,7 @@ export function BentoGrid() {
                                     <Area
                                         type="monotone"
                                         dataKey="complexity"
-                                        stroke="#00FF94"
+                                        stroke="#2E5CFF"
                                         strokeWidth={2}
                                         fillOpacity={1}
                                         fill="url(#colorComplexity)"
@@ -109,11 +109,11 @@ export function BentoGrid() {
 
                 <div className="md:col-span-1 flex flex-col gap-6">
                     {/* Cell 2: Solution (Sim) */}
-                    <div className="flex-1 glass-panel rounded-2xl p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                    <div className="flex-1 glass-panel rounded-2xl p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300 border border-zinc-200 bg-white">
                         <div className="absolute inset-0 flex flex-col">
                             <div className="p-6 z-10">
-                                <h3 className="text-xl font-bold text-white">Simulation First</h3>
-                                <p className="text-sm text-zinc-400">Evaluate before execution.</p>
+                                <h3 className="text-xl font-bold text-zinc-900">Simulation First</h3>
+                                <p className="text-sm text-zinc-500">Evaluate before execution.</p>
                             </div>
                             <div className="flex-1 relative">
                                 <RoboticArm />
@@ -122,8 +122,8 @@ export function BentoGrid() {
                     </div>
 
                     {/* Cell 3: Polyglot */}
-                    <div className="h-40 glass-panel rounded-2xl p-6 relative overflow-hidden flex flex-col justify-center group hover:scale-[1.02] transition-transform duration-300">
-                        <h3 className="text-lg font-bold text-white mb-4 absolute top-6 left-6">Polyglot Core</h3>
+                    <div className="h-40 glass-panel rounded-2xl p-6 relative overflow-hidden flex flex-col justify-center group hover:shadow-xl transition-all duration-300 border border-zinc-200 bg-white">
+                        <h3 className="text-lg font-bold text-zinc-900 mb-4 absolute top-6 left-6">Polyglot Core</h3>
                         <div className="flex overflow-hidden relative w-full pt-8">
                             <motion.div
                                 className="flex gap-8 whitespace-nowrap"
@@ -131,7 +131,7 @@ export function BentoGrid() {
                                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                             >
                                 {[...LANGUAGES, ...LANGUAGES, ...LANGUAGES].map((lang, i) => (
-                                    <span key={i} className="text-2xl font-mono text-zinc-500 hover:text-neon transition-colors cursor-default">
+                                    <span key={i} className="text-2xl font-mono text-zinc-400 hover:text-[#2E5CFF] transition-colors cursor-default">
                                         {lang}
                                     </span>
                                 ))}
